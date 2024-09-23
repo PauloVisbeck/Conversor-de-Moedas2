@@ -2,15 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    outline: none; /* Retira a linha azul ao redor do select e do input ao clicar neles */
 }
-
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo dentro da section (img e div) horizontalmente  */ 
-    
-}
-
+  
 body {
     background-color: rgb(139, 82, 254);
     display: flex;           /* Ativa o Flexbox no body */
@@ -20,8 +15,15 @@ body {
     margin: 0;               /* Remove qualquer margem padrão do body */
 }
 
-img {
-    width: 200px;
+#aplicacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo dentro da section (img e div) horizontalmente  */ 
+    
+}
+
+#logo-principal {
+    width: 150px;
     margin-bottom: 10px;   
 }
 
@@ -30,7 +32,101 @@ img {
     flex-direction: column;
     align-items: center;
     width: 400px;
-    height: 650px;
+    /* height: 650px; Deixei sem a altura especificada para se ajustar conforme o tamanho dos itens */
     background-color: rgb(245, 245, 245);
     border-radius: 20px;
+    padding: 15px 24px 15px; /* Em cima, nos lados e embaixo */
+}
+
+#conversor label {
+    align-self: flex-start; /* Alinha apenas as labels à esquerda. Essa propriedade do Flexbox permite que um único item dentro de um contêiner flexbox seja alinhado de forma diferente dos outros. */
+}
+
+label {
+    color: #777777;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 25px;        
+}
+
+select {
+    width: 100%; /* Usa todo o espaço disposnivel, mas não estoura pois tem um padding lateral de 24px em #conversor */
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    padding-left: 5px;
+    appearance: none; /* Retira as setas padrões de dentro de select */
+    font-size: 16px;
+    font-weight: 700;
+    color: #555555;
+    cursor: pointer;
+}
+
+input {
+    width: 100%; /* Usa todo o espaço disposnivel, mas não estoura pois tem um padding lateral de 24px em #conversor */
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    padding-left: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #555555;
+}
+
+button {
+    width: 327px;
+    height: 48px;
+    background-color: #772FD3;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 23px;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.8; /* Efeito ao passar o mouse sobre o botão */
+}
+
+button:active{
+    opacity: 0.6; /* Efeito ao clicar o no botão */
+}
+
+section {
+    margin-top: 10px;
+    width: 327px;
+    /* height: 276px;  Deixei sem a altura especificada para se ajustar conforme o tamanho dos itens */
+    border: 1px solid #772FD3;
+    border-radius: 20px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow-img {
+    margin: 10px 0; /* em cima e embaixo e nos lados*/
+    
+}
+
+.currency-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px; /* Distanciamento entre os itens (disponível apenas usando display: flex) */
+}
+
+.currency {
+    color: #777777;
+    font-size: 14px;    
+}
+
+.currency-value {
+   color: #555555;
+   font-size: 20px;
+   font-weight: 700; 
 }
