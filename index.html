@@ -23,10 +23,10 @@
 
 
             <label for="moedaEstrangeira">Converter para:</label>
-            <select name="moedaEstrangeira" id="">
+            <select name="moedaEstrangeira" id="seletorDeMoedas">
                 <option value="dolar">US$ - Dolar americano</option>
                 <option value="euro">€ - Euro</option>
-                <option value="dolar">£ - Libra</option>
+                <option value="libra">£ - Libra</option>
             </select>
 
 
@@ -39,23 +39,25 @@
             <section>
                 <div class="currency-box">
                     <img src="./assets/real.png" alt="logo-moeda-a-converter">
-                    <p class="currency">Real</p>
-                    <p class="currency-value">R$ 0,00</p>
+                    <p class="currency-01">Real</p>
+                    <p class="valorMoedaReais">R$ 0,00</p>
                 </div>
 
                 <img class="arrow-img" src="./assets/arrow.png" alt="seta-para-baixo">
 
                 <div class="currency-box">
-                    <img src="./assets/dolar.png" alt="logo-moeda-convertida">
-                    <p class="currency">Dolar</p>
-                    <p class="currency-value">US$ 0.00</p>
+                    <img src="./assets/dolar.png" alt="logo-moeda-convertida" id="img-Moeda">
+                    <p class="currency-02" id="nomeMoeda">Dolar</p>
+                    <p class="valorMoedaEstrangeira">US$ 0.00</p>
                 </div>
 
             </section>
 
         </main>
-    </div>
+    </div>  
 
 </body>
+
+<script src="./script.js"></script>
 
 </html>
