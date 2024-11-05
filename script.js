@@ -6,7 +6,7 @@ const seletorDeMoedas = document.getElementById("seletorDeMoedas")
 convertButton.addEventListener("click", convertValues)
 
 // Função que realiza a conversão de moedas quando clica no botão
-function convertValues() {
+async function convertValues() {
     const valorDigitado = document.getElementById("valorParaConversao").value
     const valorFormatado = parseFloat(valorDigitado.replace(",", "."))
 
@@ -20,11 +20,16 @@ function convertValues() {
 
     const valorMoedaEstrangeira = document.querySelector(".valorMoedaEstrangeira")
 
-    let cotacaoDolar = 5.20
-    let cotacaoEuro = 6.08
-    let cotacaoLibra = 7.30
+    // Consumindo API para conversão de moedas
+    const cotacaoAPI = await fetch ("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,GBP-BRL").then (response => response.json())
 
+    console.log(cotacaoAPI)
     console.log(seletorDeMoedas.value)
+
+    //Utilizando valores de cambio da API
+    let cotacaoDolar = cotacaoAPI.USDBRL.high
+    let cotacaoEuro = cotacaoAPI.EURBRL.high
+    let cotacaoLibra = cotacaoAPI.GBPBRL.high
 
     // Conforme a moeda escolhida no select, realiza o cálculo e a formatação da mesma
     if (seletorDeMoedas.value == "dolar") {         
